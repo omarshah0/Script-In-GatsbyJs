@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+// Import React so that you can use JSX in HeadComponents
+const React = require("react")
 
-// You can delete this file if you're not using it
+const BodyComponents = [
+  <script src="/js/demo.js"></script>,
+  <script src="/js/three.min.js"></script>,
+  <script src="/js/perlin.js"></script>,
+  <script src="/js/TweenMax.min.js"></script>,
+]
+
+exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
+  setPostBodyComponents(BodyComponents)
+}
