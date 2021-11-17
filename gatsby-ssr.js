@@ -3,9 +3,13 @@ const React = require("react")
 
 const BodyComponents = [
   <script src="/js/demo.js"></script>,
-  <script src="/js/three.min.js"></script>,
-  <script src="/js/perlin.js"></script>,
-  <script src="/js/TweenMax.min.js"></script>,
+  <script dangerouslySetInnerHtml={{
+  `SevenroomsWidget.init({
+      venueId: "mysweetliberty",
+      triggerId: "sr-res-root",
+      type: "reservations",
+    })`
+  }}></script>,
 ]
 
 exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
